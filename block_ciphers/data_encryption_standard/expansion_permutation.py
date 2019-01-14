@@ -13,10 +13,16 @@ expansion_permutation_lookup_table = np.array([
 
 CHAR_BIT_SIZE = 8
 MAX_BIT_SIZE = 32
-MAX_LENGTH = MAX_BIT_SIZE / CHAR_BIT_SIZE
+MAX_LENGTH = MAX_BIT_SIZE // CHAR_BIT_SIZE
 
 
 def expansion_permutation(text):
     if len(text) > MAX_LENGTH:
         raise Exception(f'length of text must not exceed {MAX_LENGTH}')
-    pass
+    bit_repr = np.array([int(c)
+                         for c in "".join(_char_to_bin(x) for x in text)])
+    return np.array([bit_repr[x] for x in expansion_permutation_lookup_table])
+
+
+def _char_to_bin(character):
+    return str(format(ord(character), 'b')).zfill(CHAR_BIT_SIZE)
