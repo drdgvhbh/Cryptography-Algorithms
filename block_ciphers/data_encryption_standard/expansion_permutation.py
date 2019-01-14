@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import numpy as np
 
 expansion_permutation_lookup_table = np.array([
