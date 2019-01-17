@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/home/drd/anaconda3/bin/python",
+    "python.pythonPath": "/home/drd/anaconda3/envs/drd-crypto/bin/python",
     "python.linting.enabled": true
 }
